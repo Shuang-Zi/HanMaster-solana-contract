@@ -8,9 +8,15 @@ describe("han-master-solana", () => {
 
   const program = anchor.workspace.HanMasterSolana as Program<HanMasterSolana>;
 
+  let Master = anchor.web3.Keypair.generate();
+
   it("Is initialized!", async () => {
     // Add your test here.
-    const tx = await program.methods.initialize().rpc();
+    const tx = await program.methods.initialize().accounts({
+      master: Master.publicKey,
+      user: anchor.getProvider().publicKey,
+      systemProgram: anchor.web3.SystemProgram.programId,
+    }).signers([Master]).rpc();
     console.log("Your transaction signature", tx);
   });
 });
