@@ -9,7 +9,7 @@ use anchor_spl::{
     token::{Mint, Token, TokenAccount, MintTo, mint_to}
 };
 
-declare_id!("8b5LAyQvXKTBUwu2DM6HcXMJHZxf3w8YCt6DrZ84A469");
+declare_id!("9JjymTUKnDM91mAx3g75yvMkxW8udrx16AfVkmRwjNjJ");
 
 #[program]
 pub mod han_master_solana {
